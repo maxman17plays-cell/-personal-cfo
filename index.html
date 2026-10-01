@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1324">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Personal CFO">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Personal CFO</title>
+<style>
+:root{--navy:#0b1324;--navy2:#111c33;--ink:#152033;--muted:#718096;--line:#e8edf3;--bg:#f5f7fb;--card:#fff;--teal:#11a79a;--blue:#3b82f6;--purple:#7c5cff;--gold:#e8a317;--red:#e05252;--green:#15966f;--shadow:0 10px 30px rgba(15,31,55,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button{border:0;cursor:pointer}.app{max-width:760px;margin:auto;min-height:100vh;padding-bottom:92px}.hero{background:linear-gradient(135deg,var(--navy),#182847);color:#fff;padding:calc(20px + env(safe-area-inset-top)) 20px 24px;border-radius:0 0 28px 28px}.brand{font-weight:800;font-size:21px}.sub{opacity:.72;font-size:13px;margin-top:4px}.toprow{display:flex;justify-content:space-between;align-items:center;margin-top:28px}.month{font-size:14px;opacity:.8}.iconbtn{background:rgba(255,255,255,.12);color:#fff;width:42px;height:42px;border-radius:14px}.content{padding:18px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:17px;box-shadow:var(--shadow)}.label{font-size:11px;font-weight:800;letter-spacing:.09em;color:#7a8494;text-transform:uppercase}.big{font-size:28px;font-weight:850;margin-top:7px;letter-spacing:-.04em}.small{font-size:12px;color:var(--muted);margin-top:5px}.section{margin:22px 0 10px;display:flex;justify-content:space-between;align-items:center}.section h2{font-size:18px;margin:0}.link{background:none;color:var(--blue);font-weight:700;font-size:13px}.primary{background:var(--navy);color:#fff;border-radius:14px;padding:12px 15px;font-weight:800}.pill{display:inline-flex;padding:5px 9px;border-radius:999px;background:#eef8f6;color:var(--green);font-size:11px;font-weight:800}.barwrap{display:grid;gap:10px}.barrow{display:grid;grid-template-columns:78px 1fr 70px;align-items:center;gap:8px;font-size:12px}.bar{height:9px;background:#edf1f6;border-radius:99px;overflow:hidden}.fill{height:100%;border-radius:99px}.tx{display:flex;align-items:center;gap:11px;padding:12px 0;border-bottom:1px solid var(--line)}.tx:last-child{border-bottom:0}.avatar{width:38px;height:38px;border-radius:13px;background:#eef2f8;display:grid;place-items:center;font-weight:800}.txmain{flex:1}.txname{font-weight:750;font-size:14px}.txmeta{font-size:11px;color:var(--muted);margin-top:2px}.amt{font-weight:800}.income{color:var(--green)}.expense{color:var(--red)}.goal{margin-bottom:12px}.goalhead{display:flex;justify-content:space-between;font-size:13px;font-weight:750}.progress{height:9px;background:#edf1f6;border-radius:99px;overflow:hidden;margin:9px 0 5px}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--blue));border-radius:99px}.goalmeta{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}.nav{position:fixed;z-index:10;bottom:0;left:0;right:0;max-width:760px;margin:auto;padding:10px 10px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);gap:4px}.nav button{background:none;color:#7a8494;font-size:10px;font-weight:750;padding:7px 2px}.nav button.active{color:var(--navy)}.nav .ni{display:block;font-size:20px;line-height:22px;margin-bottom:3px}.view{display:none}.view.active{display:block}.fab{position:fixed;right:20px;bottom:100px;background:var(--navy);color:#fff;border-radius:18px;width:54px;height:54px;font-size:25px;box-shadow:0 12px 28px rgba(11,19,36,.25);z-index:9}.modal{position:fixed;inset:0;background:rgba(8,15,30,.55);z-index:30;display:none;align-items:flex-end}.modal.show{display:flex}.sheet{background:#fff;width:100%;max-width:760px;margin:auto;border-radius:26px 26px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom));max-height:90vh;overflow:auto}.sheethead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.sheet h2{margin:0}.x{background:#eef1f5;border-radius:12px;width:38px;height:38px}.field{margin:11px 0}.field label{display:block;font-size:12px;font-weight:750;margin-bottom:6px}.field input,.field select{width:100%;padding:13px;border:1px solid #dfe5ed;border-radius:13px;background:#fff}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.submit{width:100%;padding:14px;border-radius:14px;background:var(--navy);color:#fff;font-weight:850;margin-top:10px}.tabs{display:flex;gap:8px;overflow:auto;margin-bottom:14px}.tabs button{white-space:nowrap;padding:9px 12px;border-radius:999px;background:#eaf0f7;color:#526074;font-weight:750;font-size:12px}.tabs button.on{background:var(--navy);color:#fff}.empty{padding:28px;text-align:center;color:var(--muted)}.statline{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}.statline:last-child{border-bottom:0}.chart{height:180px;display:flex;align-items:end;gap:9px;padding:12px 4px 0}.col{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;height:100%;justify-content:end}.col i{width:100%;max-width:32px;background:linear-gradient(180deg,var(--blue),var(--teal));border-radius:8px 8px 3px 3px;min-height:4px}.col span{font-size:9px;color:var(--muted)}.notice{background:#eef7ff;border:1px solid #d7e9ff;color:#31577f;border-radius:16px;padding:12px;font-size:12px;line-height:1.45}.danger{color:var(--red)}@media(min-width:700px){body{background:#e9eef5}.app{background:var(--bg);box-shadow:0 0 50px rgba(15,31,55,.08)}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="hero">
+  <div class="brand">Personal CFO</div><div class="sub">Your money, organized.</div>
+  <div class="toprow"><div class="month" id="monthLabel"></div><button class="iconbtn" onclick="openModal('transaction')">＋</button></div>
+</header>
+
+<main class="content">
+<section id="home" class="view active">
+  <div class="grid2">
+    <div class="card"><div class="label">Net Worth</div><div class="big" id="nw">$0</div><div class="small">Assets minus debt</div></div>
+    <div class="card"><div class="label">This Month</div><div class="big" id="income">$0</div><div class="small">Income</div></div>
+    <div class="card"><div class="label">Spending</div><div class="big" id="spending">$0</div><div class="small">This month</div></div>
+    <div class="card"><div class="label">Savings Rate</div><div class="big" id="saveRate">0%</div><div class="small">Income saved</div></div>
+  </div>
+  <div class="section"><h2>Cash Flow</h2><span class="pill" id="cashPill">On track</span></div>
+  <div class="card"><div class="barwrap" id="cashBars"></div></div>
+  <div class="section"><h2>Goals</h2><button class="link" onclick="nav('goals')">View all</button></div>
+  <div class="card" id="goalPreview"></div>
+  <div class="section"><h2>Recent Transactions</h2><button class="link" onclick="nav('transactions')">View all</button></div>
+  <div class="card" id="recent"></div>
+</section>
+
+<section id="transactions" class="view">
+  <div class="section"><h2>Transactions</h2><button class="primary" onclick="openModal('transaction')">＋ Add</button></div>
+  <div class="tabs" id="txTabs"><button class="on" onclick="setTxFilter('All',this)">All</button><button onclick="setTxFilter('Income',this)">Income</button><button onclick="setTxFilter('Expense',this)">Expenses</button></div>
+  <div class="card" id="ledger"></div>
+</section>
+
+<section id="goals" class="view">
+  <div class="section"><h2>Financial Goals</h2><button class="primary" onclick="openModal('goal')">＋ Goal</button></div>
+  <div class="notice">Set targets for savings, investments, purchases, or anything else. Progress is stored on this device.</div>
+  <div style="height:12px"></div><div id="goalsList"></div>
+</section>
+
+<section id="networth" class="view">
+  <div class="section"><h2>Net Worth</h2></div>
+  <div class="card">
+    <div class="label">Current Net Worth</div><div class="big" id="nw2">$0</div>
+    <div class="statline"><span>Total assets</span><b id="assets">$0</b></div>
+    <div class="statline"><span>Total debt</span><b id="debt">$0</b></div>
+    <div class="statline"><span>Monthly debt payments</span><b id="debtPay">$0</b></div>
+    <div class="statline"><span>Debt-to-income</span><b id="dti">0%</b></div>
+  </div>
+  <div class="section"><h2>Assets & Accounts</h2><button class="link" onclick="openModal('account')">＋ Account</button></div>
+  <div class="card" id="accounts"></div>
+  <div class="section"><h2>Net Worth Trend</h2></div>
+  <div class="card"><div class="chart" id="nwChart"></div></div>
+</section>
+
+<section id="more" class="view">
+  <div class="section"><h2>More</h2></div>
+  <div class="card">
+    <div class="statline"><span>Budget vs. Actual</span><button class="link" onclick="alert('Budget module is ready for the next build.')">Open</button></div>
+    <div class="statline"><span>Debt Payoff Planner</span><button class="link" onclick="alert('Debt payoff planner is ready for the next build.')">Open</button></div>
+    <div class="statline"><span>Financial Forecast</span><button class="link" onclick="alert('Forecast module is ready for the next build.')">Open</button></div>
+    <div class="statline"><span>Export / Backup</span><button class="link" onclick="exportData()">Export</button></div>
+    <div class="statline"><span>Reset Demo Data</span><button class="link danger" onclick="resetData()">Reset</button></div>
+  </div>
+  <div style="height:14px"></div><div class="notice"><b>iPhone install:</b> Once this app is hosted over HTTPS, open it in Safari and use <b>Share → Add to Home Screen</b>. It will launch full-screen like an app.</div>
+</section>
+</main>
+
+<button class="fab" onclick="openModal('transaction')">＋</button>
+<nav class="nav">
+<button class="active" data-view="home" onclick="nav('home')"><span class="ni">⌂</span>Home</button>
+<button data-view="transactions" onclick="nav('transactions')"><span class="ni">☷</span>Transactions</button>
+<button data-view="goals" onclick="nav('goals')"><span class="ni">◎</span>Goals</button>
+<button data-view="networth" onclick="nav('networth')"><span class="ni">↗</span>Net Worth</button>
+<button data-view="more" onclick="nav('more')"><span class="ni">•••</span>More</button>
+</nav>
+</div>
+
+<div class="modal" id="transactionModal"><div class="sheet">
+<div class="sheethead"><h2>Add Transaction</h2><button class="x" onclick="closeModal()">✕</button></div>
+<div class="field"><label>Type</label><select id="tType"><option>Expense</option><option>Income</option></select></div>
+<div class="field"><label>Description</label><input id="tDesc" placeholder="e.g. Paycheck, groceries"></div>
+<div class="formgrid"><div class="field"><label>Amount</label><input id="tAmount" type="number" step=".01" inputmode="decimal" placeholder="0.00"></div><div class="field"><label>Date</label><input id="tDate" type="date"></div></div>
+<div class="field"><label>Category</label><select id="tCat"><option>Housing</option><option>Utilities</option><option>Groceries</option><option>Dining</option><option>Gas/Transport</option><option>Shopping</option><option>Entertainment</option><option>Travel</option><option>Health</option><option>Insurance</option><option>Debt Payment</option><option>Savings</option><option>Investment</option><option>Other</option></select></div>
+<button class="submit" onclick="addTransaction()">Save Transaction</button>
+</div></div>
+
+<div class="modal" id="goalModal"><div class="sheet">
+<div class="sheethead"><h2>New Goal</h2><button class="x" onclick="closeModal()">✕</button></div>
+<div class="field"><label>Goal name</label><input id="gName" placeholder="Emergency Fund"></div>
+<div class="formgrid"><div class="field"><label>Target</label><input id="gTarget" type="number" step=".01" inputmode="decimal"></div><div class="field"><label>Starting amount</label><input id="gCurrent" type="number" step=".01" inputmode="decimal" value="0"></div></div>
+<button class="submit" onclick="addGoal()">Create Goal</button>
+</div></div>
+
+<div class="modal" id="accountModal"><div class="sheet">
+<div class="sheethead"><h2>Add Account</h2><button class="x" onclick="closeModal()">✕</button></div>
+<div class="field"><label>Account name</label><input id="aName" placeholder="Checking"></div>
+<div class="formgrid"><div class="field"><label>Type</label><select id="aType"><option>Checking</option><option>Savings</option><option>Brokerage</option><option>Cash</option><option>Other Asset</option><option>Debt</option></select></div><div class="field"><label>Balance</label><input id="aBalance" type="number" step=".01" inputmode="decimal"></div></div>
+<button class="submit" onclick="addAccount()">Save Account</button>
+</div></div>
+
+<script>
+const KEY='personalCFO_PWA_v1';
+const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n||0);
+const monthName=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'long',year:'numeric'});
+const today=()=>new Date().toISOString().slice(0,10);
+let data=JSON.parse(localStorage.getItem(KEY)||'null')||{
+ transactions:[
+  {id:1,date:today(),type:'Income',desc:'Paycheck',cat:'Income',amount:3000},
+  {id:2,date:today(),type:'Expense',desc:'Car payment',cat:'Debt Payment',amount:450},
+  {id:3,date:today(),type:'Expense',desc:'Groceries',cat:'Groceries',amount:125},
+  {id:4,date:today(),type:'Expense',desc:'Gas',cat:'Gas/Transport',amount:45}
+ ],
+ goals:[
+  {id:1,name:'Emergency Fund',target:10000,current:7800},
+  {id:2,name:'Investment Fund',target:15000,current:3450},
+  {id:3,name:'Big Purchase',target:12000,current:2200}
+ ],
+ accounts:[
+  {id:1,name:'Checking',type:'Checking',balance:3500},
+  {id:2,name:'Savings',type:'Savings',balance:12000},
+  {id:3,name:'Brokerage',type:'Brokerage',balance:3450},
+  {id:4,name:'Car Loan',type:'Debt',balance:11000}
+ ],
+ history:[11500,11900,12300,12800,13400,13950]
+};
+function save(){localStorage.setItem(KEY,JSON.stringify(data));render()}
+function monthTx(){let m=new Date().toISOString().slice(0,7);return data.transactions.filter(t=>t.date.slice(0,7)===m)}
+function totals(){let ts=monthTx(), income=ts.filter(t=>t.type==='Income').reduce((a,t)=>a+t.amount,0), spending=ts.filter(t=>t.type==='Expense').reduce((a,t)=>a+t.amount,0);let assets=data.accounts.filter(a=>a.type!=='Debt').reduce((a,x)=>a+x.balance,0), debt=data.accounts.filter(a=>a.type==='Debt').reduce((a,x)=>a+x.balance,0);let debtPay=ts.filter(t=>t.type==='Expense'&&t.cat==='Debt Payment').reduce((a,t)=>a+t.amount,0);return{income,spending,assets,debt,debtPay,nw:assets-debt}}
+function render(){let t=totals();document.getElementById('monthLabel').textContent=new Date().toLocaleDateString('en-US',{month:'long',year:'numeric'})+' • Monthly snapshot';document.getElementById('nw').textContent=money(t.nw);document.getElementById('nw2').textContent=money(t.nw);document.getElementById('income').textContent=money(t.income);document.getElementById('spending').textContent=money(t.spending);document.getElementById('saveRate').textContent=(t.income?Math.max(0,(t.income-t.spending)/t.income*100):0).toFixed(0)+'%';document.getElementById('assets').textContent=money(t.assets);document.getElementById('debt').textContent=money(t.debt);document.getElementById('debtPay').textContent=money(t.debtPay);document.getElementById('dti').textContent=(t.income?t.debtPay/t.income*100:0).toFixed(0)+'%';renderBars(t);renderGoals();renderTx();renderAccounts();renderNW()}
+function renderBars(t){let cats=['Housing','Groceries','Gas/Transport','Dining','Shopping','Debt Payment'];let vals=cats.map(c=>monthTx().filter(x=>x.type==='Expense'&&x.cat===c).reduce((a,x)=>a+x.amount,0));let max=Math.max(1,...vals);document.getElementById('cashBars').innerHTML=cats.map((c,i)=>`<div class="barrow"><span>${c}</span><div class="bar"><div class="fill" style="width:${vals[i]/max*100}%;background:${i%2?'#3b82f6':'#11a79a'}"></div></div><b>${money(vals[i])}</b></div>`).join('')}
+function goalHTML(g){let p=Math.min(100,g.target?g.current/g.target*100:0);return `<div class="goal"><div class="goalhead"><span>${g.name}</span><span>${p.toFixed(0)}%</span></div><div class="progress"><i style="width:${p}%"></i></div><div class="goalmeta"><span>${money(g.current)} saved</span><span>${money(g.target)} target</span></div><div style="display:flex;justify-content:flex-end;margin-top:8px"><button class="link" onclick="contribute(${g.id})">＋ Add</button></div></div>`}
+function renderGoals(){document.getElementById('goalPreview').innerHTML=data.goals.slice(0,2).map(goalHTML).join('')||'<div class="empty">Create your first goal.</div>';document.getElementById('goalsList').innerHTML=data.goals.map(g=>`<div class="card" style="margin-bottom:12px">${goalHTML(g)}</div>`).join('')||'<div class="card empty">No goals yet.</div>'}
+function txHTML(t){return `<div class="tx"><div class="avatar">${t.type==='Income'?'↑':'$'}</div><div class="txmain"><div class="txname">${esc(t.desc)}</div><div class="txmeta">${esc(t.cat)} • ${t.date}</div></div><div class="amt ${t.type==='Income'?'income':'expense'}">${t.type==='Income'?'+':'−'}${money(t.amount)}</div></div>`}
+function renderTx(){let arr=data.transactions.slice().sort((a,b)=>b.date.localeCompare(a.date));document.getElementById('recent').innerHTML=arr.slice(0,5).map(txHTML).join('')||'<div class="empty">No transactions.</div>';let f=window.txFilter||'All';let shown=arr.filter(t=>f==='All'||t.type===f);document.getElementById('ledger').innerHTML=shown.map(txHTML).join('')||'<div class="empty">No transactions.</div>'}
+function setTxFilter(f,el){window.txFilter=f;document.querySelectorAll('#txTabs button').forEach(x=>x.classList.remove('on'));el.classList.add('on');renderTx()}
+function renderAccounts(){document.getElementById('accounts').innerHTML=data.accounts.map(a=>`<div class="statline"><span>${esc(a.name)} <small style="color:#8b95a5">(${a.type})</small></span><b>${a.type==='Debt'?'−':''}${money(a.balance)}</b></div>`).join('')||'<div class="empty">Add an account.</div>'}
+function renderNW(){let el=document.getElementById('nwChart'), h=data.history, max=Math.max(...h), min=Math.min(...h), range=Math.max(1,max-min);el.innerHTML=h.map((v,i)=>`<div class="col"><i style="height:${20+(v-min)/range*115}px"></i><span>${i+1}</span></div>`).join('')}
+function nav(v){document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));document.getElementById(v).classList.add('active');document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.view===v));window.scrollTo({top:0,behavior:'smooth'})}
+function openModal(which){document.getElementById(which==='transaction'?'transactionModal':which==='goal'?'goalModal':'accountModal').classList.add('show');if(which==='transaction')document.getElementById('tDate').value=today()}
+function closeModal(){document.querySelectorAll('.modal').forEach(x=>x.classList.remove('show'))}
+function addTransaction(){let desc=document.getElementById('tDesc').value.trim(), amount=+document.getElementById('tAmount').value;if(!desc||!amount)return alert('Enter a description and amount.');data.transactions.push({id:Date.now(),date:document.getElementById('tDate').value||today(),type:document.getElementById('tType').value,desc,cat:document.getElementById('tCat').value,amount});document.getElementById('tDesc').value='';document.getElementById('tAmount').value='';closeModal();save()}
+function addGoal(){let name=document.getElementById('gName').value.trim(),target=+document.getElementById('gTarget').value,current=+document.getElementById('gCurrent').value||0;if(!name||!target)return alert('Enter a goal name and target.');data.goals.push({id:Date.now(),name,target,current});closeModal();document.getElementById('gName').value='';document.getElementById('gTarget').value='';document.getElementById('gCurrent').value=0;save()}
+function contribute(id){let n=prompt('How much do you want to add?');let a=+n;if(!a||a<=0)return;let g=data.goals.find(x=>x.id===id);g.current+=a;save()}
+function addAccount(){let name=document.getElementById('aName').value.trim(),balance=+document.getElementById('aBalance').value,type=document.getElementById('aType').value;if(!name||Number.isNaN(balance))return alert('Enter an account name and balance.');data.accounts.push({id:Date.now(),name,type,balance});closeModal();save()}
+function exportData(){let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='personal-cfo-backup.json';a.click();URL.revokeObjectURL(url)}
+function resetData(){if(confirm('Reset all Personal CFO data on this device?')){localStorage.removeItem(KEY);location.reload()}}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+render();
+if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
+</script>
+</body>
+</html>
