@@ -71,7 +71,7 @@
     <div class="statline"><span>Debt Payoff Planner</span><button class="link" onclick="alert('Debt payoff planner is ready for the next build.')">Open</button></div>
     <div class="statline"><span>Financial Forecast</span><button class="link" onclick="alert('Forecast module is ready for the next build.')">Open</button></div>
     <div class="statline"><span>Export / Backup</span><button class="link" onclick="exportData()">Export</button></div>
-    <div class="statline"><span>Reset Demo Data</span><button class="link danger" onclick="resetData()">Reset</button></div>
+    <div class="statline"><span>Reset All Data</span><button class="link danger" onclick="resetData()">Reset</button></div>
   </div>
   <div style="height:14px"></div><div class="notice"><b>iPhone install:</b> Once this app is hosted over HTTPS, open it in Safari and use <b>Share → Add to Home Screen</b>. It will launch full-screen like an app.</div>
 </section>
@@ -155,7 +155,7 @@ function addGoal(){let name=document.getElementById('gName').value.trim(),target
 function contribute(id){let n=prompt('How much do you want to add?');let a=+n;if(!a||a<=0)return;let g=data.goals.find(x=>x.id===id);g.current+=a;save()}
 function addAccount(){let name=document.getElementById('aName').value.trim(),balance=+document.getElementById('aBalance').value,type=document.getElementById('aType').value;if(!name||Number.isNaN(balance))return alert('Enter an account name and balance.');data.accounts.push({id:Date.now(),name,type,balance});closeModal();save()}
 function exportData(){let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='personal-cfo-backup.json';a.click();URL.revokeObjectURL(url)}
-function resetData(){if(confirm('Reset all Personal CFO data on this device?')){localStorage.removeItem(KEY);location.reload()}}
+function resetData(){if(confirm('Erase all transactions, goals, accounts, and net-worth history on this device? This cannot be undone.')){data={transactions:[],goals:[],accounts:[],history:[]};save();alert('All data has been reset. Your Personal CFO is now blank and ready to use.')}}
 function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 render();
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
